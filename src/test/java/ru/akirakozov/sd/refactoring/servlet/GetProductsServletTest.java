@@ -20,11 +20,14 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class GetProductsServletTest extends BaseTest {
 
+    private static final DataSource dataSource = new DataSource("jdbc:sqlite:test.db");
+
     private final GetProductsServlet getProductsServlet;
 
     public GetProductsServletTest() {
-        super(new DataSource("jdbc:sqlite:test.db"));
-        getProductsServlet = new GetProductsServlet();
+        super(dataSource);
+
+        getProductsServlet = new GetProductsServlet(dataSource);
     }
 
     @BeforeEach

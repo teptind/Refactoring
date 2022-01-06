@@ -18,12 +18,14 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class QueryServletTest extends BaseTest {
+    private static final DataSource dataSource = new DataSource("jdbc:sqlite:test.db");
 
     private final QueryServlet queryServlet;
 
     public QueryServletTest() {
-        super(new DataSource("jdbc:sqlite:test.db"));
-        queryServlet = new QueryServlet();
+        super(dataSource);
+
+        queryServlet = new QueryServlet(dataSource);
     }
 
     @BeforeEach

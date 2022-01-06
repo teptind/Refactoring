@@ -28,9 +28,9 @@ public class ProductRepositoryImpl extends BaseRepository implements ProductRepo
 
     @Override
     public int countAll() {
-        return selectingQuery("SELECT COUNT(*) FROM PRODUCT", resultSet -> {
+        return selectingQuery("SELECT COUNT(*) as Cnt FROM PRODUCT", resultSet -> {
             resultSet.next();
-            return resultSet.getInt("COUNT");
+            return resultSet.getInt("Cnt");
         });
     }
 

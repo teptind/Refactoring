@@ -1,5 +1,6 @@
 package ru.akirakozov.sd.refactoring.servlet;
 
+import ru.akirakozov.sd.refactoring.datalayer.bootstrap.DataSource;
 import ru.akirakozov.sd.refactoring.datalayer.dto.Product;
 
 import javax.servlet.http.HttpServlet;
@@ -15,15 +16,17 @@ import java.sql.Statement;
  */
 public class AddProductServlet extends BaseProductServlet {
 
+    public AddProductServlet(DataSource dataSource) {
+        super(dataSource);
+    }
+
     @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) {
         String name = request.getParameter("name");
         long price = Long.parseLong(request.getParameter("price"));
 
         productRepository.add(new Product(name, price));
 
-        response.setContentType("text/html");
-        response.setStatus(HttpServletResponse.SC_OK);
-        response.getWriter().println("OK");
+        addContent(response, "OK");
     }
 }

@@ -23,11 +23,14 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 
 class AddProductServletTest extends BaseTest {
 
+    private static final DataSource dataSource = new DataSource("jdbc:sqlite:test.db");
+
     private static AddProductServlet addProductServlet;
 
     public AddProductServletTest() {
-        super(new DataSource("jdbc:sqlite:test.db"));
-        addProductServlet = new AddProductServlet();
+        super(dataSource);
+
+        addProductServlet = new AddProductServlet(dataSource);
     }
 
 
