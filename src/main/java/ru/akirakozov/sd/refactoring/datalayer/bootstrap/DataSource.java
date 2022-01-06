@@ -1,4 +1,4 @@
-package ru.akirakozov.sd.refactoring.datalayer.source;
+package ru.akirakozov.sd.refactoring.datalayer.bootstrap;
 
 import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;

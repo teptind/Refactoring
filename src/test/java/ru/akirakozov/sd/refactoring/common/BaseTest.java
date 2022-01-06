@@ -2,7 +2,7 @@ package ru.akirakozov.sd.refactoring.common;
 
 import lombok.SneakyThrows;
 import org.jsoup.Jsoup;
-import ru.akirakozov.sd.refactoring.datalayer.source.DataSource;
+import ru.akirakozov.sd.refactoring.datalayer.bootstrap.DataSource;
 import ru.akirakozov.sd.refactoring.datalayer.dto.Product;
 
 import java.sql.Connection;

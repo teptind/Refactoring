@@ -8,7 +8,7 @@ import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 import ru.akirakozov.sd.refactoring.common.BaseTest;
 import ru.akirakozov.sd.refactoring.datalayer.dto.Product;
-import ru.akirakozov.sd.refactoring.datalayer.source.DataSource;
+import ru.akirakozov.sd.refactoring.datalayer.bootstrap.DataSource;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
