@@ -84,18 +84,18 @@ class AddProductServletTest extends BaseTest {
         assertEquals(expectedProducts, actualProducts);
     }
 
-//    @Test
-//    @SneakyThrows
-//    void shouldThrowOnNameParameterIsAbsent() {
-//        assertThrows(IllegalArgumentException.class, () -> {
-//            var request = Mockito.mock(HttpServletRequest.class);
-//            var response = Mockito.mock(HttpServletResponse.class);
-//
-//            Mockito.when(request.getParameter("price")).thenReturn("10");
-//
-//            addProductServlet.doGet(request, response);
-//        });
-//    }
+    @Test
+    @SneakyThrows
+    void shouldThrowOnNameParameterIsAbsent() {
+        assertThrows(IllegalArgumentException.class, () -> {
+            var request = Mockito.mock(HttpServletRequest.class);
+            var response = Mockito.mock(HttpServletResponse.class);
+
+            Mockito.when(request.getParameter("price")).thenReturn("10");
+
+            addProductServlet.doGet(request, response);
+        });
+    }
 
     @Test
     @SneakyThrows

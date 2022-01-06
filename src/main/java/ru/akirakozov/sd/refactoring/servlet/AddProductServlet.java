@@ -23,10 +23,16 @@ public class AddProductServlet extends BaseProductServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) {
         String name = request.getParameter("name");
+        validateName(name);
+
         long price = Long.parseLong(request.getParameter("price"));
 
         productRepository.add(new Product(name, price));
 
         addContent(response, "OK");
+    }
+
+    private void validateName(String name) {
+        if (name == null) throw new IllegalArgumentException();
     }
 }
